@@ -7,15 +7,15 @@ y=filter(b,a,x);
 
 xd=[zeros(1,D) x]
 yd=filter(b,a,xd);
+yd_dash = [zeros(1,D) y]
 
-figure
-subplot 211
-stem(x)
-subplot 212
-stem(xd)
+if yd-yd_dash~=0
+    disp('Not Time-Variant')
+else
+    disp('Time Invariant')
+end
 
-figure
 subplot 211
-stem(y)
+stem(yd_dash)
 subplot 212
 stem(yd)
